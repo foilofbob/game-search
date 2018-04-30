@@ -1,0 +1,44 @@
+<div class="resultsHeader">
+    {{#if total}}
+        <div>
+            <div class="count">
+                Showing {{start}}-{{end}} of {{total}} games.
+            </div>
+            <div class="link">
+                <a id="cartLink" href="cart">
+                    Cart({{cartCount}})
+                </a>
+            </div>
+        </div>
+        <div>
+            {{#if showPrev}}
+                <input id="prevGamesPage" type="button" value="Prev"/>
+            {{/if}}
+            {{#if showNext}}
+                <input id="nextGamesPage" type="button" value="Next"/>
+            {{/if}}
+        </div>
+    {{else}}
+        No results
+    {{/if}}
+</div>
+<div class="results">
+    {{#each games}}
+        <div class="gameRow">
+            <div class="icon">
+                <img src={{this.attributes.icon}} height="80" width="80">
+            </div>
+            <div class="details">
+                <div class="title">
+                    {{this.attributes.name}}
+                </div>
+                <div class="description">
+                    {{this.attributes.deck}}
+                </div>
+            </div>
+            <div class="cartButton">
+                <input class="addToCart" type="button" value="Add To Cart" gameId="{{this.attributes.id}}"/>
+            </div>
+        </div>
+    {{/each}}
+</div>

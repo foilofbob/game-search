@@ -1,0 +1,34 @@
+<div class="resultsHeader">
+    <div class="count">
+        Your Cart ({{count}} items)
+    </div>
+    <div class="link">
+        <a id="browseLink" href="index">
+            Back to Browse
+        </a>
+    </div>
+</div>
+<div class="cartItems">
+    {{#each games}}
+        <div class="gameRow">
+            <div class="icon">
+                <img src={{this.icon}} height="80" width="80">
+            </div>
+            <div class="details">
+                <div class="title">
+                    {{this.name}}
+                </div>
+                <div class="description">
+                    {{this.deck}}
+                </div>
+            </div>
+            <div class="cartButton">
+                <input class="removeFromCart" type="button" value="Remove" gameId="{{this.id}}"/>
+            </div>
+        </div>
+    {{/each}}
+</div>
+<div class="checkoutContainer">
+    <input id="checkoutButton" type="button" value="Checkout" {{#unless games}}disabled{{/unless}}/>
+</div>
+
