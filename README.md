@@ -1,6 +1,6 @@
 # game-search
 
-To setup the application use `npm run install`
+To setup the application use `npm install`
 
 To run the application use `npm start`
 
